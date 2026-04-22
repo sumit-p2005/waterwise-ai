@@ -7,14 +7,23 @@
     }
   },
   "routes": [
-    { "handle": "filesystem" },
     { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/calculator", "dest": "/api/index.php?page=calculator" },
-    { "src": "/map", "dest": "/api/index.php?page=map" },
-    { "src": "/dashboard", "dest": "/api/index.php?page=dashboard" },
-    { "src": "/admin", "dest": "/api/index.php?page=admin" },
-    { "src": "/report", "dest": "/api/index.php?page=report" },
-    { "src": "/", "dest": "/api/index.php?page=home" },
+
+    { "src": "/$", "dest": "/api/index.php?page=home" },
+    { "src": "/index\\.php$", "dest": "/api/index.php?page=home" },
+    { "src": "/calculator\\.php$", "dest": "/api/index.php?page=calculator" },
+    { "src": "/map\\.php$", "dest": "/api/index.php?page=map" },
+    { "src": "/dashboard\\.php$", "dest": "/api/index.php?page=dashboard" },
+    { "src": "/admin\\.php$", "dest": "/api/index.php?page=admin" },
+    { "src": "/report\\.php$", "dest": "/api/index.php?page=report" },
+
+    { "src": "/calculator$", "dest": "/api/index.php?page=calculator" },
+    { "src": "/map$", "dest": "/api/index.php?page=map" },
+    { "src": "/dashboard$", "dest": "/api/index.php?page=dashboard" },
+    { "src": "/admin$", "dest": "/api/index.php?page=admin" },
+    { "src": "/report$", "dest": "/api/index.php?page=report" },
+
+    { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/api/index.php?page=home" }
   ]
 }
